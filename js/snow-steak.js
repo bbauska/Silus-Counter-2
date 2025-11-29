@@ -8,7 +8,7 @@
 
 //Each update cycle should remove this much life from a snowflake
 const LIFE_PER_TICK = 1000 / 60;
- //Number of snowflakes
+//Number of snowflakes
 const MAX_FLAKES = Math.min(75, screen.width / 1280 * 75);
 //The array of snow particles to be animated. They are HTMLElements
 const flakes = [];
@@ -17,15 +17,15 @@ const flakes = [];
 //The initial multiplier determines how far it moves in vw units at most, from the original
 //x-axis position
 const period = [
-    n => 5 * (Math.sin(n)),
-    n => 8 * (Math.cos(n)),
-    n => 5 * (Math.sin(n) * Math.cos(2 * n)),
-    n => 2 * (Math.sin(0.25 * n) - Math.cos(0.75 * n) + 1),
-    n => 5 * (Math.sin(0.75 * n) + Math.cos(0.25 * n) - 1)
+  n => 5 * (Math.sin(n)),
+  n => 8 * (Math.cos(n)),
+  n => 5 * (Math.sin(n) * Math.cos(2 * n)),
+  n => 2 * (Math.sin(0.25 * n) - Math.cos(0.75 * n) + 1),
+  n => 5 * (Math.sin(0.75 * n) + Math.cos(0.25 * n) - 1)
 ];
 
 //Emojis to substitute for snowflakes, just for fun
-const fun = ['❤️', '😻', '🥩', '🐔', '💘'];
+const fun = ['❤️', '🌈', '⚡️', '💥', '✨', '💫', '🌸'];
 
 //The CSS styles for the snowflakes and container
 const cssString = `.snowfall-container {
@@ -116,16 +116,16 @@ function updatePositions() {
             flake.style.transform = `translate3d(${x}vw, ${y}vh, ${z}px)`;
 
             if (dt >= 0.5) {
-                //Start fading out flakes 1/2 down screen
-                flake.style.opacity = (1.0 - ((dt - 0.5) * 2));
+              //Start fading out flakes 1/2 down screen
+              flake.style.opacity = (1.0 - ((dt - 0.5) * 2));
             }
 
             curLife -= LIFE_PER_TICK;
             flake.dataset.life = curLife;
         }
         else {
-            //Once the lifespan is exceeded, reset the flake
-            resetFlake(flake);
+          //Once the lifespan is exceeded, reset the flake
+          resetFlake(flake);
         }
     });
 
