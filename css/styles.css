@@ -1,4 +1,7 @@
 /* styles.css in silus-counter-2 of silus-counter-2.bauska.org */
+/* confetti-container & more */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
 body {
   display: flex;
   justify-content: center;
@@ -63,7 +66,7 @@ h4 {
 }
 
 /* confetti-container & more */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+<!-- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');  -->
 
 #confetti-container {
   position: absolute;
