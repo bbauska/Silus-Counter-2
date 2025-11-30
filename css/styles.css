@@ -62,7 +62,7 @@ h4 {
   100% {transform: scale(1);}
 }
 
-<!-- confetti-container & more -->
+/* confetti-container & more */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 #confetti-container {
@@ -102,7 +102,7 @@ h4 {
     transform: translateY(100vh) rotate(360deg);
   }
 }
-<!-- shadow/confetti -->
+/* shadow/confetti */
 button {
   margin-bottom: 10px;
   display: block;
