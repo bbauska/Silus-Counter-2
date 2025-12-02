@@ -1,7 +1,7 @@
 'use strict';
 
 /*
- * js/snow-roma.js
+ * js/snowroma.js
  * Not doing any polyfills, this is a one-off, added fun little extra
  * Assumes window.requestAnimationFrame support, unprefixed CSS Transforms,
  * emoji support, and ES6 support
