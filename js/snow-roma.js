@@ -25,8 +25,7 @@ const period = [
 ];
 
 /* Emojis to substitute for snowflakes */
-const fun = ['❤️', '🌈', '⚡️', '💥', '✨', '💫', '🌸', '🦄', '🐯', '🐹', '🐺', '🐴', '🐵', '🐶', 
-             '🐘', '🦉', '🐒', '🐱'. '🐫', '🎂', '🍿'];
+const fun = ['❤️', '🌈', '⚡️', '💥', '✨', '💫', '🌸', '🦄', '🐯', '🐹', '🐺', '🐴', '🐵', '🐶', '🐘', '🦉', '🐒', '🐱'. '🐫', '🎂', '🍿'];
 
 /* The CSS styles for the snowflakes and container */
 const cssString = `.snowfall-container {
@@ -134,14 +133,17 @@ function appendSnow() {
   let styles = document.createElement('style');
   styles.innerText = cssString;
   document.querySelector('head').appendChild(styles);
+
   /* Create the container for the snowflakes and add it to the document body */
   let field = document.createElement('div');
   field.classList.add('snowfall-container');
+
   /* Set aria-hidden and role=presentation so that screen readers don't read the emoji */
   field.setAttribute('aria-hidden', 'true');
   field.setAttribute('role', 'presentation');
   document.body.appendChild(field);
   let i = 0;
+
   /* Using an inner function and setTimeout to delay the initial snowfall */
   /* This makes it much less clumpy */
   const addFlake = () => {
@@ -153,6 +155,7 @@ function appendSnow() {
       resetFlake(flake);
       flakes.push(flake);
       field.appendChild(flake);
+
     /* Recursive (delayed by timeout) call to add a flake until max reached */
     if (i++ <= MAX_FLAKES) {
       setTimeout(addFlake, Math.ceil(Math.random() * 300) + 100);
